@@ -1,42 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta content="en-us" http-equiv="Content-Language">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Yongcun Zhang</title>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yongcun Zhang</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .profile-info img {
+            border-radius: 50%;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .profile-info div {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-info p {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .bio {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
 </head>
-<body leftmargin="40" bgcolor="#FFFFFF" link="#444444" text="#444444">
-	<table border="0" id="table1" width="1080">
-		<tbody>
-			<tr>
-				<td>
-					<p align="center"><font face="Arial"><img border="0" src="zycc.jpg" width="200" height="300"></font></p>
-				</td>
-				<td>
-					<font face="Arial" size="5"><b>&nbsp;Yongcun Zhang <span lang="zh-cn">张永存</span></b></font>
-					<p><font face="Times New Roman" style="font-size: 15pt;">&nbsp; Undergraduate</font></p>
-					<p><font face="Times New Roman" style="font-size: 15pt;">&nbsp; School of Informatics Xiamen University, Xiamen</font></p>
-					<p><font face="Times New Roman" style="font-size: 15pt;">&nbsp; yongcunzhang@foxmail.com</font></p>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<table border="1" style="border-width: 0px;" width="820">
-		<tbody>
-			<tr>
-				<td style="border-style: none; border-width: medium;">
-					<p style="margin-top: 3px; margin-bottom: 3px;"><font face="Times New Roman" style="font-size: 15pt;">
-						I am an undergraduate of the School of Informatics of Xiamen University. 
-						I will graduate in 2023 and continue to study for a master's degree in Xiamen University.
-						I am interested in computer vision and machine learning.
-						<br><br>
-												
-				
-					</font></p>
-				</td>
-			</tr>
-		</tbody>
-	</table><br>
+<body>
+    <header>
+        <h1>Yongcun Zhang</h1>
+        <p>Undergraduate at School of Informatics, Xiamen University</p>
+    </header>
+
+    <div class="container">
+        <div class="profile-info">
+            <img src="zycc.jpg" alt="Yongcun Zhang">
+            <div>
+                <h2>Yongcun Zhang <span lang="zh-cn">张永存</span></h2>
+                <p><strong>Undergraduate</strong> - School of Informatics, Xiamen University</p>
+                <p>Email: <a href="mailto:yongcunzhang@foxmail.com">yongcunzhang@foxmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="bio">
+            <p>I am an undergraduate student at the School of Informatics, Xiamen University. I will graduate in 2023 and continue to pursue a master's degree at Xiamen University. My research interests include computer vision and machine learning, with a focus on solving real-world problems using cutting-edge technologies.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yongcun Zhang. All rights reserved.</p>
+    </footer>
 </body>
 </html>
