@@ -2,115 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="en-us" http-equiv="Content-Language">
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yongcun Zhang</title>
-    <meta charset="utf-8">
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            color: #444444;
+            display: flex;
         }
-        table {
-            width: 100%;
+        .sidebar {
+            background: linear-gradient(to bottom, #333, #555);
+            color: #fff;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
             margin-bottom: 20px;
         }
-        .header {
-            text-align: center;
+        .sidebar h1 {
+            font-size: 20px;
+            margin: 10px 0;
         }
-        .header img {
-            border: 0;
-            width: 200px;
-            height: 300px;
+        .sidebar p {
+            font-size: 14px;
+            margin-bottom: 30px;
         }
-        .intro {
-            font-size: 15pt;
-            font-family: "Times New Roman", serif;
-            margin-top: 10px;
+        .sidebar a {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 16px;
+            margin: 10px 0;
+            display: block;
         }
-        .intro b {
-            font-size: 20pt;
-        }
-        .contact {
-            font-size: 15pt;
-            font-family: "Times New Roman", serif;
+        .sidebar a:hover {
+            color: #fff;
         }
         .content {
-            font-size: 15pt;
-            font-family: "Times New Roman", serif;
+            flex: 1;
+            padding: 40px;
+        }
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .content p {
             line-height: 1.6;
+            font-size: 16px;
+            color: #333;
         }
-        .section-title {
-            font-size: 18pt;
+        .news-item {
+            margin-bottom: 20px;
+        }
+        .news-item span {
+            color: #f00;
             font-weight: bold;
-            margin-top: 20px;
         }
-        .contact a {
-            color: #444444;
+        .news-item a {
             text-decoration: none;
+            color: #007bff;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header with image and basic info -->
-    <table border="0">
-        <tbody>
-            <tr>
-                <td class="header">
-                    <img src="zycc.jpg" alt="Yongcun Zhang">
-                </td>
-                <td>
-                    <p class="intro"><b>Yongcun Zhang <span lang="zh-cn">张永存</span></b></p>
-                    <p class="intro">Undergraduate, School of Informatics, Xiamen University, Xiamen</p>
-                    <p class="contact">Email: <a href="mailto:yongcunzhang@foxmail.com">yongcunzhang@foxmail.com</a></p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="zycc.jpg" alt="Yongcun Zhang">
+        <h1>Yongcun Zhang <span lang="zh-cn">(张永存)</span></h1>
+        <p>Master's Student at Xiamen University</p>
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <!-- Biography Section -->
-    <table border="1" style="border-width: 0px;">
-        <tbody>
-            <tr>
-                <td class="content">
-                    <p>I am an undergraduate student at the School of Informatics, Xiamen University. 
-                    I am expected to graduate in 2023 and continue my studies for a Master's degree at Xiamen University. 
-                    My primary research interests include computer vision and machine learning, with a specific focus on 
-                    medical image processing and deep learning techniques for image segmentation.</p>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I am a Master's student at Xiamen University, focusing on computer vision and medical image analysis. 
+                My research involves weakly-supervised learning, Vision Transformers, and 3D image segmentation for clinical applications. 
+                I aim to contribute to automated systems that improve diagnostic accuracy in medical imaging.
+            </p>
+        </section>
 
-                    <p>In the past few years, I have been involved in research projects related to automated image analysis 
-                    for oral health, and I am currently working on improving the performance of weakly-supervised learning models 
-                    for medical image recognition. I also explore applications of Vision Transformers and Multiple Instance Learning 
-                    to enhance model accuracy in detecting and segmenting anatomical structures in medical images.</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <!-- News Section -->
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-item">
+                <span>[11/16]</span> Submitted a paper on "Weakly Supervised Tooth-Marked Tongue Detection" to a core journal.
+            </div>
+            <div class="news-item">
+                <span>[10/23]</span> Started a project on 3D CBCT tooth instance segmentation using UNETR++.
+            </div>
+            <div class="news-item">
+                <span>[09/21]</span> Presented research on Vision Transformers for medical image analysis at a local seminar.
+            </div>
+        </section>
 
-    <!-- Research Interests Section -->
-    <div class="section-title">Research Interests</div>
-    <p class="content">My research focuses on developing novel methods for medical image analysis, particularly in the areas of:</p>
-    <ul class="content">
-        <li>Weakly-supervised learning techniques for image segmentation.</li>
-        <li>Application of Vision Transformers (ViT) in medical image processing.</li>
-        <li>Development of automated systems for detecting tooth-marked tongues in clinical images.</li>
-        <li>Exploring deep learning methods for 3D tooth instance segmentation from CBCT scans.</li>
-    </ul>
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>[Add your publications here]</p>
+        </section>
 
-    <!-- Education Section -->
-    <div class="section-title">Education</div>
-    <p class="content"><b>Undergraduate Student:</b> School of Informatics, Xiamen University, Xiamen (2020 - 2023)</p>
-    <p class="content"><b>Master's Degree:</b> Expected to continue studies at Xiamen University (2023 - Present)</p>
-
-    <!-- Publications Section -->
-    <div class="section-title">Publications</div>
-    <p class="content">[List of relevant publications, papers, and conferences can be added here.]</p>
-
-    <!-- Contact Section -->
-    <div class="section-title">Contact</div>
-    <p class="content">Feel free to reach out to me via email for collaborations or inquiries.</p>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:yongcunzhang@foxmail.com">yongcunzhang@foxmail.com</a></p>
+        </section>
+    </div>
 
 </body>
 </html>
