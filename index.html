@@ -5,78 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yongcun Zhang</title>
     <style>
+        /* 页面通用样式 */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            font-family: Georgia, serif;
+            color: #444;
             display: flex;
+            background: linear-gradient(to bottom, #e4e4e4, #ffffff);
         }
+
+        /* 左侧导航栏样式 */
         .sidebar {
-            background: linear-gradient(to bottom, #333, #555);
+            background: linear-gradient(to bottom, #3a3a3a, #555);
             color: #fff;
-            width: 300px;
-            padding: 20px;
+            width: 280px;
+            padding: 40px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100vh;
         }
+
         .sidebar img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
             object-fit: cover;
             margin-bottom: 20px;
+            border: 3px solid #fff;
         }
+
         .sidebar h1 {
-            font-size: 20px;
+            font-size: 22px;
             margin: 10px 0;
+            font-weight: normal;
         }
+
+        .sidebar h1 span {
+            font-size: 18px;
+            color: #bbb;
+        }
+
         .sidebar p {
             font-size: 14px;
             margin-bottom: 30px;
+            font-style: italic;
         }
+
         .sidebar a {
             text-decoration: none;
             color: #ddd;
             font-size: 16px;
-            margin: 10px 0;
+            margin: 15px 0;
             display: block;
+            transition: color 0.3s;
         }
+
         .sidebar a:hover {
             color: #fff;
         }
+
+        /* 主内容区域样式 */
         .content {
             flex: 1;
-            padding: 40px;
+            padding: 60px;
+            background: #fff;
+            overflow-y: auto;
         }
+
         .content h2 {
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 20px;
+            font-weight: normal;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
         }
+
         .content p {
-            line-height: 1.6;
+            line-height: 1.8;
             font-size: 16px;
             color: #333;
-        }
-        .news-item {
             margin-bottom: 20px;
         }
-        .news-item span {
-            color: #f00;
-            font-weight: bold;
+
+        .news-item {
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
         }
+
+        .news-item span {
+            color: #d9534f;
+            font-weight: bold;
+            font-family: Georgia, serif;
+        }
+
         .news-item a {
             text-decoration: none;
             color: #007bff;
+            transition: color 0.3s;
         }
+
         .news-item a:hover {
-            text-decoration: underline;
+            color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar -->
+    <!-- 左侧导航栏 -->
     <div class="sidebar">
         <img src="zycc.jpg" alt="Yongcun Zhang">
         <h1>Yongcun Zhang <span lang="zh-cn">(张永存)</span></h1>
@@ -87,9 +125,9 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Main Content -->
+    <!-- 主内容 -->
     <div class="content">
-        <!-- About Section -->
+        <!-- About 部分 -->
         <section id="about">
             <h2>About</h2>
             <p>
@@ -99,7 +137,7 @@
             </p>
         </section>
 
-        <!-- News Section -->
+        <!-- News 部分 -->
         <section id="news">
             <h2>News</h2>
             <div class="news-item">
@@ -113,13 +151,13 @@
             </div>
         </section>
 
-        <!-- Publications Section -->
+        <!-- Publications 部分 -->
         <section id="publications">
             <h2>Publications</h2>
             <p>[Add your publications here]</p>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact 部分 -->
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:yongcunzhang@foxmail.com">yongcunzhang@foxmail.com</a></p>
