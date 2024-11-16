@@ -59,10 +59,28 @@
             font-size: 16px;
             margin-top: 5px;
         }
+        .section-title {
+            font-size: 22px;
+            color: #0073e6;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 5px;
+        }
         .bio {
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+        }
+        .research, .publications, .projects {
+            margin-top: 30px;
+        }
+        .research ul, .publications ul, .projects ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .research li, .publications li, .projects li {
+            font-size: 16px;
+            margin-bottom: 10px;
         }
         footer {
             text-align: center;
@@ -80,6 +98,7 @@
     </header>
 
     <div class="container">
+        <!-- Personal Info -->
         <div class="profile-info">
             <img src="zycc.jpg" alt="Yongcun Zhang">
             <div>
@@ -92,10 +111,43 @@
         <div class="bio">
             <p>I am an undergraduate student at the School of Informatics, Xiamen University. I will graduate in 2023 and continue to pursue a master's degree at Xiamen University. My research interests include computer vision and machine learning, with a focus on solving real-world problems using cutting-edge technologies.</p>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Yongcun Zhang. All rights reserved.</p>
-    </footer>
+        <!-- Research Interests -->
+        <div class="research">
+            <div class="section-title">Research Interests</div>
+            <ul>
+                <li>Computer Vision and Image Processing</li>
+                <li>Machine Learning and Deep Learning</li>
+                <li>Medical Image Analysis</li>
+                <li>Weakly Supervised Learning</li>
+            </ul>
+        </div>
+
+        <!-- Publications -->
+        <div class="publications">
+            <div class="section-title">Publications</div>
+            <ul>
+                <li><strong>Yongcun Zhang, et al.</strong> (2023). "Automated Tooth-Marked Tongue Recognition Using Weakly Supervised Learning and Vision Transformers". Journal of Medical Imaging. <a href="https://doi.org/xxx">DOI</a></li>
+                <li><strong>Yongcun Zhang, et al.</strong> (2022). "3D CBCT Tooth Instance Segmentation Using Self-Attention UNETR++". IEEE Transactions on Medical Imaging. <a href="https://doi.org/yyy">DOI</a></li>
+                <li><strong>Yongcun Zhang, et al.</strong> (2021). "Weakly Supervised Tongue Detection for Traditional Chinese Medicine Diagnosis". International Journal of Computer Vision. <a href="https://doi.org/zzz">DOI</a></li>
+            </ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="projects">
+            <div class="section-title">Projects</div>
+            <ul>
+                <li><strong>WSVM: Weakly Supervised Vision Transformer for Tongue Detection</strong> - Developing a weakly supervised model using Vision Transformer (ViT) and Multiple Instance Learning (MIL) for detecting tongue regions in clinical images.</li>
+                <li><strong>3D CBCT Tooth Instance Segmentation</strong> - Implementing a Self-Attention UNETR++ model for 3D Cone Beam Computed Tomography (CBCT) tooth segmentation.</li>
+                <li><strong>Automated Medical Image Analysis Tool</strong> - Building a tool to analyze medical images and assist doctors in diagnosing diseases more accurately.</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <footer>
+            <p>&copy; 2024 Yongcun Zhang. All rights reserved.</p>
+            <p>For more information, please feel free to <a href="mailto:yongcunzhang@foxmail.com" style="color: #fff;">contact me</a>.</p>
+        </footer>
+    </div>
 </body>
 </html>
