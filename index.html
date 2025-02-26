@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yongcun Zhang</title>
     <style>
-        /* 页面通用样式 */
+        /* General page styles */
         body {
             margin: 0;
             padding: 0;
@@ -13,10 +13,10 @@
             color: #444;
             background: linear-gradient(to bottom, #e4e4e4, #ffffff);
             display: flex;
-            height: 100vh; /* 确保高度占满屏幕 */
+            height: 100vh; /* Ensure full screen height */
         }
 
-        /* 左侧导航栏样式 */
+        /* Sidebar styles */
         .sidebar {
             background: linear-gradient(to bottom, #3a3a3a, #555);
             color: #fff;
@@ -26,10 +26,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: fixed; /* 固定位置 */
+            position: fixed; /* Fixed position */
             top: 0;
             left: 0;
-            height: 100%; /* 高度占满整个视窗 */
+            height: 100%; /* Full screen height */
         }
 
         .sidebar img {
@@ -71,13 +71,13 @@
             color: #fff;
         }
 
-        /* 主内容区域样式 */
+        /* Main content styles */
         .content {
-            margin-left: 280px; /* 为左侧导航栏腾出空间 */
+            margin-left: 280px; /* Space for sidebar */
             padding: 60px;
             background: #fff;
             overflow-y: auto;
-            height: 100vh; /* 确保高度占满屏幕 */
+            height: 100vh; /* Full screen height */
         }
 
         .content h2 {
@@ -119,30 +119,28 @@
 </head>
 <body>
 
-    <!-- 左侧导航栏 -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <img src="zycc.jpg" alt="Yongcun Zhang">
         <h1>Yongcun Zhang <span lang="zh-cn">(张永存)</span></h1>
-        <p>Master's Student at Xiamen University</p>
-        <a href="#about">About</a>
+        <p>Master's Student in Artificial Intelligence at Xiamen University</p>
+        <a href="#about">About Me</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- 主内容 -->
+    <!-- Main content -->
     <div class="content">
-        <!-- About 部分 -->
+        <!-- About Me -->
         <section id="about">
-            <h2>About</h2>
+            <h2>About Me</h2>
             <p>
-                I am a Master's student at Xiamen University, focusing on computer vision and medical image analysis. 
-                My research involves weakly-supervised learning, Vision Transformers, and 3D image segmentation for clinical applications. 
-                I aim to contribute to automated systems that improve diagnostic accuracy in medical imaging.
+                I am a Master's student in Artificial Intelligence at Xiamen University, focusing on computer vision and medical image analysis. My research involves weakly-supervised learning, Vision Transformers, and 3D image segmentation for clinical applications. I aim to contribute to automated systems that improve diagnostic accuracy in medical imaging.
             </p>
         </section>
 
-        <!-- News 部分 -->
+        <!-- News -->
         <section id="news">
             <h2>News</h2>
             <div class="news-item">
@@ -156,13 +154,24 @@
             </div>
         </section>
 
-        <!-- Publications 部分 -->
+        <!-- Publications -->
         <section id="publications">
             <h2>Publications</h2>
-            <p>[Add your publications here]</p>
+            <p>
+                <strong>Weakly Supervised Object Detection for Automatic Tooth-marked Tongue Recognition</strong><br>
+                Zhang, Yongcun, et al. "Weakly Supervised Object Detection for Automatic Tooth-marked Tongue Recognition." arXiv preprint arXiv:2408.16451 (2024). ([arxiv.org](https://arxiv.org/abs/2408.16451))
+            </p>
+            <p>
+                <strong>A Multi-stage Network with Self-attention for Tooth Instance Segmentation</strong><br>
+                Zhang, Yongcun, Zhiming Luo, and Shaozi Li. "A Multi-stage Network with Self-attention for Tooth Instance Segmentation." CCF Conference on Computer Supported Cooperative Work and Social Computing. 2023. ([link.springer.com](https://link.springer.com/chapter/10.1007/978-981-99-9640-7_32))
+            </p>
+            <p>
+                <strong>Long-Tailed Out-of-Distribution Detection: Prioritizing Attention to Tail</strong><br>
+                He, Y., Peng, L., Zhang, Y., Weng, J., Luo, Z., & Li, S. (2024). Long-Tailed Out-of-Distribution Detection: Prioritizing Attention to Tail. arXiv preprint arXiv:2408.06742. ([arxiv.org](https://arxiv.org/abs/2408.06742))
+            </p>
         </section>
 
-        <!-- Contact 部分 -->
+        <!-- Contact -->
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:yongcunzhang@foxmail.com">yongcunzhang@foxmail.com</a></p>
