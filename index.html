@@ -3,432 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yongcun Zhang - AI Researcher & Engineer</title>
+    <title>Yongcun Zhang (张永存)</title>
     <style>
         /* General page styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            background: linear-gradient(to bottom, #f5f7fa, #e4e4e4);
-            line-height: 1.6;
+            font-family: Georgia, serif;
+            color: #444;
+            background: linear-gradient(to bottom, #e4e4e4, #ffffff);
             display: flex;
-            min-height: 100vh;
+            height: 100vh; /* Ensure full screen height */
         }
         /* Sidebar styles */
         .sidebar {
-            background: linear-gradient(to bottom, #2c3e50, #34495e);
-            color: #ecf0f1;
-            width: 300px;
-            padding: 50px 25px;
+            background: linear-gradient(to bottom, #3a3a3a, #555);
+            color: #fff;
+            width: 280px;
+            padding: 40px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: fixed;
+            position: fixed; /* Fixed position */
             top: 0;
             left: 0;
-            height: 100%;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 100;
+            height: 100%; /* Full screen height */
+            overflow-y: auto; /* Allow scrolling if content overflows */
         }
         .sidebar img {
             border-radius: 50%;
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s;
-        }
-        .sidebar img:hover {
-            transform: scale(1.05);
+            border: 3px solid #fff;
         }
         .sidebar h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin: 10px 0;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-weight: normal;
         }
         .sidebar h1 span {
-            font-size: 16px;
-            color: #bdc3c7;
-            display: block;
-            margin-top: 5px;
+            font-size: 18px;
+            color: #bbb;
         }
         .sidebar p {
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-style: italic;
-            color: #95a5a6;
-        }
-        .sidebar .contact-info {
-            margin: 25px 0;
-            font-size: 14px;
-            text-align: left;
-            align-self: flex-start;
-        }
-        .sidebar .contact-info div {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        .sidebar .contact-info .icon {
-            width: 18px;
-            margin-right: 10px;
-            opacity: 0.7;
         }
         .sidebar a {
             text-decoration: none;
-            color: #bdc3c7;
+            color: #ddd;
             font-size: 16px;
-            margin: 12px 0;
+            margin: 15px 0;
             display: block;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: all 0.3s;
-            width: calc(100% - 30px);
-            text-align: left;
+            transition: color 0.3s;
         }
         .sidebar a:hover {
-            background: rgba(255,255,255,0.1);
-            color: #ecf0f1;
-            transform: translateX(5px);
-        }
-        .sidebar a.active {
-            background: #3498db;
             color: #fff;
         }
         /* Main content styles */
         .content {
-            margin-left: 300px;
-            padding: 60px 80px;
+            margin-left: 280px; /* Space for sidebar */
+            padding: 60px;
             background: #fff;
-            flex: 1;
             overflow-y: auto;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+            height: 100vh; /* Full screen height */
         }
         .content h2 {
-            font-size: 28px;
-            margin-bottom: 25px;
-            font-weight: 600;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-        .content h3 {
-            font-size: 22px;
-            margin: 25px 0 15px 0;
-            color: #2980b9;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: normal;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
         }
         .content p {
+            line-height: 1.8;
             font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .content ul {
-            padding-left: 20px;
+            color: #333;
             margin-bottom: 20px;
         }
+        .content ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
         .content li {
-            margin-bottom: 8px;
-            font-size: 16px;
-            color: #555;
-        }
-        .highlight {
-            background: linear-gradient(120deg, #d4e6f1, #a9cce3);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            margin: 20px 0;
-            font-weight: 500;
-        }
-        .tag {
-            display: inline-block;
-            background: #e8f4fc;
-            color: #2980b9;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin: 0 3px 3px 0;
-            border: 1px solid #d6eaf8;
-        }
-        .project, .publication, .experience {
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #ddd;
-        }
-        .project:last-child, .publication:last-child, .experience:last-child {
-            border-bottom: none;
-        }
-        .date {
-            font-size: 15px;
-            color: #7f8c8d;
-            font-weight: 500;
-            margin-top: 5px;
-        }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
-        }
-        .skill-category h4 {
-            color: #2c3e50;
-            font-size: 18px;
             margin-bottom: 10px;
-            border-left: 3px solid #3498db;
-            padding-left: 10px;
+            line-height: 1.6;
         }
         .news-item {
-            margin-bottom: 18px;
-            padding-left: 10px;
-            border-left: 3px solid #3498db;
-            font-size: 15px;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
         }
         .news-item span {
-            color: #e74c3c;
-            font-weight: 700;
-            margin-right: 8px;
+            color: #d9534f;
+            font-weight: bold;
+            font-family: Georgia, serif;
         }
         .news-item a {
-            color: #2980b9;
             text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
         }
         .news-item a:hover {
-            text-decoration: underline;
+            color: #0056b3;
         }
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 8px 15px;
+
+        /* Publication list styles */
+        .publication-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .publication-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        .pub-title {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+        .pub-authors {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .pub-source {
+            margin-bottom: 5px;
+        }
+        .pub-status {
+            font-weight: bold;
+            color: #555; /* Or a specific color for status */
+            margin-bottom: 5px;
+        }
+        .pub-links a {
+            margin-right: 15px;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
+            color: #007bff;
+        }
+        .pub-links a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+         /* Experience/Project list styles */
+        .experience-item, .project-item {
+            margin-bottom: 25px;
+        }
+        .exp-header, .proj-header {
+             margin-bottom: 8px;
+        }
+        .exp-title, .proj-title {
+            font-weight: bold;
+            display: inline;
+        }
+        .exp-meta, .proj-meta {
+            font-style: italic;
+            color: #666;
+            display: inline;
+            margin-left: 10px;
+        }
+        .exp-description, .proj-description {
             margin-top: 5px;
-            transition: background 0.3s;
+            margin-bottom: 10px;
         }
-        .btn:hover {
-            background: #2980b9;
+
+        /* Skills section styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
+        .skill-category {
+            /* background-color: #f9f9f9; */
+            /* padding: 15px; */
+            /* border-radius: 5px; */
+        }
+        .skill-category h3 {
+             margin-top: 0;
+             margin-bottom: 10px;
+             font-size: 18px;
+             border-bottom: 1px solid #ddd;
+             padding-bottom: 3px;
+        }
+        .skill-category ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+        .skill-category li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact section styles */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .contact-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
     </style>
 </head>
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="zycc.jpg" alt="Yongcun Zhang">
-        <h1>Yongcun Zhang <span>(张永存)</span></h1>
-        <p>AI Researcher & Algorithm Engineer</p>
-        
-        <div class="contact-info">
-            <div>
-                <span class="icon">📧</span>
-                <span>yongcunzhang@qq.com</span>
-            </div>
-            <div>
-                <span class="icon">📱</span>
-                <span>18106081657</span>
-            </div>
-            <div>
-                <span class="icon">🌐</span>
-                <span><a href="https://yc-zh.github.io/homepage/" style="color: #bdc3c7;">yc-zh.github.io</a></span>
-            </div>
-            <div>
-                <span class="icon">🐙</span>
-                <span><a href="https://github.com/yc-zh" style="color: #bdc3c7;">github.com/yc-zh</a></span>
-            </div>
-        </div>
-
-        <a href="#about" class="active">About Me</a>
+        <h1>Yongcun Zhang <span lang="zh-cn">(张永存)</span></h1>
+        <p>Master's Student in Artificial Intelligence at Xiamen University</p>
+        <a href="#about">About Me</a>
+        <a href="#news">News</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-        <a href="#research">Research & Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
     </div>
-
     <!-- Main content -->
     <div class="content">
         <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a Master's student in Artificial Intelligence at <strong>Xiamen University</strong> (GPA: 3.96/4.0, Rank 1/62), where I focus on <strong>Computer Vision, Medical Image Analysis, and Recommender Systems</strong>. My research integrates deep learning with real-world applications in healthcare and e-commerce.
+                I am a Master's student in Artificial Intelligence at Xiamen University, where I rank 1st out of 62 students with a GPA of 3.96/4.0. My research focuses on computer vision and medical image analysis, with a particular interest in weakly-supervised learning, Vision Transformers, and 3D image segmentation for clinical applications. My goal is to develop robust and efficient AI systems that can contribute to advancements in automated medical diagnostics. I am also actively exploring the application of large models in recommendation systems.
             </p>
-            <p>
-                As a <strong>first-author</strong> on a JCR Q1 journal (BSPC) and a CCF conference (CCSCW), I have developed innovative methods in weakly supervised learning and 3D medical segmentation. My industrial experience at <strong>Alibaba Cloud</strong> and <strong>JD.com</strong> has honed my skills in deploying large-scale recommendation systems and leveraging LLMs for business impact.
-            </p>
-            <div class="highlight">
-                🔬 Research: Weakly Supervised Learning | 3D Medical Segmentation | OOD Detection<br>
-                💻 Engineering: CV/RecSys Algorithms | LLM Applications | Full-stack Development
+        </section>
+
+        <!-- News -->
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-item">
+                <span>[2025.6]</span> Started Computer Vision Algorithm Internship at Alibaba Cloud.
+            </div>
+            <div class="news-item">
+                <span>[2025.3 - 2025.6]</span> Completed Recommendation Algorithm Internship at JD.com, significantly improving CTR prediction performance (+19.4% AUC).
+            </div>
+            <div class="news-item">
+                <span>[2024.12]</span> Paper "Weakly Supervised Object Detection for Automatic Tooth-marked Tongue Recognition" accepted by BSPC (JCR Q1, 1st author).
+            </div>
+            <div class="news-item">
+                <span>[2024.8]</span> Paper "A Multi-stage Network with Self-attention for Tooth Instance Segmentation" accepted by CCSCW (1st author).
+            </div>
+             <div class="news-item">
+                <span>[2023.9]</span> Started Master's program in Artificial Intelligence at Xiamen University.
             </div>
         </section>
 
         <!-- Education -->
         <section id="education">
             <h2>Education</h2>
-            
-            <div class="project">
-                <h3>Xiamen University – M.S. in Artificial Intelligence</h3>
-                <div class="date">Sep 2023 – Jun 2026</div>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-title">M.S. in Artificial Intelligence</span>,
+                    <span class="exp-meta">Xiamen University</span>
+                    <span class="exp-meta">(2023.9 - 2026.6)</span>
+                </div>
                 <ul>
-                    <li><strong>GPA: 3.96 / 4.0 (Rank: 1/62)</strong></li>
-                    <li><strong>Research:</strong> First-author on SCI JCR Q1 (BSPC) and CCSCW; Third-author on CCF-A (AAAI); One CCF-B under review (2nd author).</li>
-                    <li><strong>Core Courses:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Optimization.</li>
+                    <li>GPA: 3.96 / 4.0, Rank: 1/62</li>
+                    <li><strong>Research:</strong> 1st author JCR Q1 paper (BSPC), 1st author CCSCW paper; 3rd author CCF-A conference (AAAI) paper.</li>
+                    <li><strong>Core Courses:</strong> Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Optimization Methods.</li>
                 </ul>
             </div>
-
-            <div class="project">
-                <h3>Xiamen University – B.S. in Artificial Intelligence</h3>
-                <div class="date">Sep 2019 – Jun 2023</div>
+             <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-title">B.S. in Artificial Intelligence</span>,
+                    <span class="exp-meta">Xiamen University</span>
+                    <span class="exp-meta">(2019.9 - 2023.6)</span>
+                </div>
                 <ul>
-                    <li>GPA: 3.55 / 4.0 (Rank: 15/75)</li>
-                    <li><strong>Honors:</strong> National First Prize, China Undergraduate Mathematical Contest in Modeling; Honorable Mention, MCM/ICM.</li>
-                    <li><strong>Awards:</strong> Xiamen University Merit Student, Academic Excellence Scholarship.</li>
+                    <li>GPA: 3.55 / 4.0, Rank: 15/75</li>
+                    <li><strong>Honors:</strong> National First Prize in Mathematical Modeling Competition (MCM), H Award in Interdisciplinary Contest in Modeling (ICM).</li>
+                    <li><strong>Scholarships:</strong> Xiamen University Merit Student, First-Class Academic Scholarship, University Scholarship.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Experience -->
         <section id="experience">
-            <h2>Professional Experience</h2>
-
-            <div class="experience">
-                <h3>Computer Vision Algorithm Intern – Alibaba Cloud</h3>
-                <div class="date">Jun 2025 – Present</div>
-                <ul>
-                    <li>Developing computer vision models for cloud-based intelligent services.</li>
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                 <div class="exp-header">
+                    <span class="exp-title">Computer Vision Algorithm Intern</span> @
+                    <span class="exp-meta">Alibaba Cloud, Alibaba Group</span>
+                    <span class="exp-meta">(2025.6 - Present)</span>
+                </div>
+                 <ul>
+                    <li>Working on computer vision tasks within the Alibaba Cloud Intelligent team.</li>
                 </ul>
             </div>
 
-            <div class="experience">
-                <h3>Recommendation Algorithm Intern – JD Retail</h3>
-                <div class="date">Mar 2025 – Jun 2025</div>
-                <ul>
-                    <li><strong>CTR Model Optimization:</strong> Improved AUC from 0.691 to 0.825 (+19.4%) via sample/feature engineering and DeepFM/DIN tuning.</li>
-                    <li><strong>Evaluation System:</strong> Built a multi-metric (AUC, GAUC, F1) offline evaluation framework for robust model assessment.</li>
-                    <li><strong>LLM-Powered Profile:</strong> Designed a structured benefit profile system using DeepSeek-V3, achieving +0.7pp gain and replacing manual labeling.</li>
+            <div class="experience-item">
+                 <div class="exp-header">
+                    <span class="exp-title">Recommendation Algorithm Intern</span> @
+                    <span class="exp-meta">JD Retail, JD.com</span>
+                    <span class="exp-meta">(2025.3 - 2025.6)</span>
+                </div>
+                 <ul>
+                    <li><strong>PLUS Membership Recommendation Optimization:</strong> Iterated CTR prediction models for PLUS membership benefits. Achieved significant improvement by employing <strong>sample engineering</strong> (positive/negative sample filtering, sampling), <strong>feature engineering</strong> (crossing, sequence feature mining), and <strong>model tuning</strong> (DeepFM, DIN), boosting online model <strong>AUC from 0.691 to 0.825 (+19.4%)</strong>.</li>
+                    <li><strong>Multi-dimensional Evaluation Framework:</strong> Independently built an offline evaluation system incorporating metrics like <strong>AUC, GAUC, F1-Score</strong> for rapid and comprehensive model iteration assessment.</li>
+                    <li><strong>LLM-driven Benefit Profiling:</strong> Led the design of a <strong>structured benefit profiling system</strong> leveraging large models (DeepSeek-V3). Utilized <strong>Prompt Engineering</strong> and few-shot learning to automate high-quality benefit tagging, introducing it into the recommendation model resulted in a <strong>+0.7pp</strong> business uplift, replacing manual profiling.</li>
                 </ul>
             </div>
 
-            <div class="experience">
-                <h3>Algorithm Development Intern – KeTong Tech</h3>
-                <div class="date">Jul 2023 – Aug 2023</div>
-                <ul>
-                    <li><strong>AIGC Applications:</strong> Implemented text-to-image, image-to-image, and video face-swapping using Stable Diffusion, Roop, and GFPGAN.</li>
-                    <li><strong>Intelligent Pipeline:</strong> Built a news processing system using GPT-3.5 API for automated summarization, sentiment analysis, and tagging, storing results in MySQL.</li>
+            <div class="experience-item">
+                 <div class="exp-header">
+                    <span class="exp-title">Algorithm Development Intern</span> @
+                    <span class="exp-meta">Shanghai Ketong Industrial Co., Ltd.</span>
+                    <span class="exp-meta">(2023.7 - 2023.8)</span>
+                </div>
+                 <ul>
+                    <li><strong>AIGC Technology Practice:</strong> Explored and implemented various AIGC applications, including text-to-image and image-to-image generation with <strong>Stable Diffusion</strong>, and video face swapping/enhancement using <strong>Roop/GFPGAN</strong>.</li>
+                    <li><strong>Intelligent Information Processing Pipeline:</strong> Designed and optimized <strong>Prompts</strong> for <strong>GPT-3.5 API</strong> to perform automated summarization, sentiment analysis, and tagging on crawled web news. Structured data was stored in a MySQL database, significantly improving information processing efficiency.</li>
                 </ul>
             </div>
+
         </section>
 
-        <!-- Research & Projects -->
-        <section id="research">
-            <h2>Research & Projects</h2>
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
 
-            <div class="project">
-                <h3>Weakly Supervised Detection for Tooth-Marked Tongue (BSPC, JCR Q1)</h3>
-                <div class="date">Sep 2023 – Jun 2024</div>
-                <ul>
-                    <li><strong>Method:</strong> Proposed a ViT-based MIL framework using image-level labels only; combined YOLOv8 and SAM for efficient tongue segmentation.</li>
-                    <li><strong>Contribution:</strong> Designed a Patch-Box merging algorithm, improving detection AP by <strong>+6.3</strong>.</li>
-                    <li><strong>Tech:</strong> <span class="tag">Weakly Supervised Learning</span> <span class="tag">Vision Transformer</span> <span class="tag">SAM</span> <span class="tag">YOLOv8</span></li>
-                    <li><a href="https://github.com/yc-zh/WSVM" class="btn">GitHub</a></li>
+            <div class="project-item">
+                 <div class="proj-header">
+                    <span class="proj-title">National Key R&D Program: Data Platform for Individualized TCM Diagnosis and Treatment</span>
+                    <span class="proj-meta">(2024.5 - 2024.12)</span>
+                </div>
+                 <ul>
+                    <li><strong>Description:</strong> Core member of this <strong>National Key R&D Program</strong> sub-project, contributing to building a data platform for multi-disease clinical research.</li>
+                    <li><strong>Responsibilities:</strong> Led backend core development including <strong>token-based authentication</strong>, <strong>permission management</strong>, and <strong>data encryption</strong> modules. Designed and optimized core <strong>MySQL database schemas</strong>. Implemented parts of the frontend interaction interface.</li>
                 </ul>
             </div>
 
-            <div class="project">
-                <h3>Multi-stage Self-Attention Network for 3D Tooth Segmentation (CCSCW)</h3>
-                <div class="date">Nov 2022 – May 2023</div>
-                <ul>
-                    <li><strong>Method:</strong> Designed a 3-stage UNETR++ network with self-attention and multi-task learning (offset & skeleton).</li>
-                    <li><strong>Result:</strong> Achieved <strong>+1.4 Dice</strong> and <strong>20% lower surface distance error</strong> in separating adjacent teeth.</li>
-                    <li><strong>Tech:</strong> <span class="tag">3D Instance Segmentation</span> <span class="tag">Self-Attention</span> <span class="tag">UNETR++</span> <span class="tag">Multi-task Learning</span></li>
-                    <li><a href="https://link.springer.com/chapter/10.1007/978-981-99-9640-7_32" class="btn">Paper</a></li>
+            <div class="project-item">
+                 <div class="proj-header">
+                    <span class="proj-title">Automatic Calculation of 3D CBCT Alveolar Bone Resorption Rate and Root Canal Length</span>
+                    <span class="proj-meta">(2024.8 - 2024.12)</span>
+                </div>
+                 <ul>
+                    <li><strong>Description:</strong> Conducted 3D quantitative analysis of segmented alveolar bone and tooth roots using deep learning models.</li>
+                    <li><strong>Responsibilities:</strong> Trained 3D segmentation models (<strong>V-Net</strong>) for alveolar bone and tooth roots. Independently designed and implemented algorithms for automatic calculation of alveolar bone resorption rate and tooth root canal length measurement based on 3D skeleton keypoint extraction. Achieved <strong>86.67% accuracy</strong> for root canal length calculation.</li>
                 </ul>
             </div>
 
-            <div class="project">
-                <h3>3D CBCT Alveolar Bone & Root Analysis System</h3>
-                <div class="date">Aug 2024 – Dec 2024</div>
-                <ul>
-                    <li>Trained a V-Net model for 3D segmentation of alveolar bone and tooth roots.</li>
-                    <li>Designed an automated algorithm to compute alveolar bone resorption rate.</li>
-                    <li>Implemented root canal length measurement via 3D skeleton keypoint extraction, achieving <strong>86.67%</strong> accuracy.</li>
+            <div class="project-item">
+                 <div class="proj-header">
+                    <span class="proj-title">Weakly Supervised Object Detection for Tooth-marked Tongue Recognition (Research)</span>
+                    <span class="proj-meta">(2023.9 - 2024.6, 1st Author)</span>
+                </div>
+                 <ul>
+                    <li><strong>Technologies:</strong> <strong>Weakly Supervised Learning</strong>, <strong>Vision Transformer</strong>, <strong>SAM</strong>, <strong>YOLOv8</strong>, Multi-Instance Learning (MIL).</li>
+                    <li><strong>Goal:</strong> Develop an automatic, accurate system for identifying tooth-marked tongues in TCM tongue diagnosis.</li>
+                    <li><strong>Contribution:</strong> Innovatively combined <strong>YOLOv8</strong> and <strong>SAM</strong> for efficient and precise tongue segmentation preprocessing. Proposed a <strong>ViT and MIL-based</strong> method using image patches as candidates, achieving localization with image-level labels. Designed a Patch-Box merging algorithm for objective quantification, improving model precision by <strong>6.3 AP</strong> over the baseline. <a href="https://github.com/yc-zh/WSVM" target="_blank">[Code]</a></li>
                 </ul>
             </div>
 
-            <div class="project">
-                <h3>National R&D Program: TCM Individualized Diagnosis Platform</h3>
-                <div class="date">May 2024 – Dec 2024</div>
-                <ul>
-                    <li>Developed backend modules: JWT-based authentication, RBAC permission control, and data encryption.</li>
-                    <li>Designed and optimized MySQL database schema for high-efficiency read/write operations.</li>
-                    <li>Implemented frontend components for clinical data interaction.</li>
+            <div class="project-item">
+                 <div class="proj-header">
+                    <span class="proj-title">Multi-stage Self-Attention Network for Tooth Instance Segmentation (Research)</span>
+                    <span class="proj-meta">(2022.11 - 2023.5, 1st Author)</span>
+                </div>
+                 <ul>
+                    <li><strong>Technologies:</strong> <strong>3D Instance Segmentation</strong>, <strong>Self-Attention</strong>, <strong>UNETR++</strong>, <strong>Multi-task Learning</strong>.</li>
+                    <li><strong>Contribution:</strong> Designed a three-stage instance segmentation network for precise 3D CBCT tooth segmentation. Introduced <strong>self-attention</strong> for global dependency capture and combined it with a <strong>multi-task learning</strong> strategy (predicting centroid offsets and skeleton) to effectively separate adjacent teeth. Achieved <strong>+1.4 Dice</strong> precision and <strong>20% reduction</strong> in average surface distance error. <a href="https://link.springer.com/chapter/10.1007/978-981-99-9640-7_32" target="_blank">[Paper]</a></li>
                 </ul>
             </div>
+
         </section>
 
         <!-- Publications -->
         <section id="publications">
             <h2>Publications</h2>
-            
-            <div class="publication">
-                <h3>Weakly Supervised Object Detection for Automatic Tooth-marked Tongue Recognition</h3>
-                <p><strong>Yongcun Zhang</strong>, Zhiming Luo, Shaozi Li. <em>Biomedical Signal Processing and Control (BSPC)</em>, 2024. (JCR Q1)</p>
-                <p>Proposed a ViT-MIL framework for weakly supervised detection, improving AP by 6.3. <a href="https://github.com/yc-zh/WSVM" class="btn">Code</a></p>
-            </div>
-
-            <div class="publication">
-                <h3>A Multi-stage Network with Self-attention for Tooth Instance Segmentation</h3>
-                <p><strong>Yongcun Zhang</strong>, Zhiming Luo, Shaozi Li. In <em>CCF Conference on Computer Supported Cooperative Work and Social Computing (CCSCW)</em>, 2023.</p>
-                <p>Designed a 3-stage network with self-attention and multi-task learning for 3D tooth segmentation. <a href="https://link.springer.com/chapter/10.1007/978-981-99-9640-7_32" class="btn">Paper</a></p>
-            </div>
-
-            <div class="publication">
-                <h3>Long-Tailed Out-of-Distribution Detection: Prioritizing Attention to Tail</h3>
-                <p>Yongi He, Lechun Peng, <strong>Yongcun Zhang</strong>, Junchi Yan, Zhiming Luo, Shaozi Li. In <em>AAAI Conference on Artificial Intelligence (AAAI)</em>, 2025. (CCF-A)</p>
-                <p>Contributed to the implementation and analysis of PATT algorithm for OOD detection under long-tailed distribution. <a href="https://github.com/InaR-design/PATT" class="btn">Code</a></p>
-            </div>
+            <ul class="publication-list">
+                <li class="publication-item">
+                     <div class="pub-status">[Published]</div>
+                    <div class="pub-title">Weakly Supervised Object Detection for Automatic Tooth-marked Tongue Recognition</div>
+                    <div class="pub-authors"><strong>Yongcun Zhang</strong>, Zhiming Luo, Shaozi Li</div>
+                    <div class="pub-source">Biomedical Signal Processing and Control (BSPC), JCR Q1, Volume 98, 2025.</div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.bspc.2024.106916" target="_blank">[DOI]</a>
+                        <a href="https://github.com/yc-zh/WSVM" target="_blank">[Code]</a>
+                    </div>
+                </li>
+                <li class="publication-item">
+                     <div class="pub-status">[Published]</div>
+                    <div class="pub-title">A Multi-stage Network with Self-attention for Tooth Instance Segmentation</div>
+                    <div class="pub-authors"><strong>Yongcun Zhang</strong>, Zhiming Luo, Shaozi Li</div>
+                    <div class="pub-source">CCF Conference on Computer Supported Cooperative Work and Social Computing (CCSCW), 2023.</div>
+                    <div class="pub-links">
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-99-9640-7_32" target="_blank">[Paper]</a>
+                    </div>
+                </li>
+                 <li class="publication-item">
+                     <div class="pub-status">[Accepted]</div>
+                    <div class="pub-title">Long-Tailed Out-of-Distribution Detection: Prioritizing Attention to Tail</div>
+                    <div class="pub-authors">Yuxin He, Linpeng Peng, <strong>Yongcun Zhang</strong>, Junjie Weng, Zhiming Luo, Shaozi Li</div>
+                    <div class="pub-source">Proceedings of the AAAI Conference on Artificial Intelligence (AAAI), 2025. (3rd Author)</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2408.06742" target="_blank">[arXiv]</a>
+                        <a href="https://github.com/InaR-design/PATT" target="_blank">[Code]</a>
+                    </div>
+                </li>
+                 <li class="publication-item">
+                     <div class="pub-status">[Under Review]</div>
+                    <div class="pub-title">Exploring ... for ... (Working Title)</div>
+                    <div class="pub-authors"><strong>Yongcun Zhang</strong>, ... </div>
+                    <div class="pub-source">IEEE International Conference on Multimedia and Expo (ICME), 2025. (2nd Author)</div>
+                    <div class="pub-links">
+                        <!-- <a href="#" target="_blank">[Preprint]</a> -->
+                    </div>
+                </li>
+            </ul>
         </section>
 
         <!-- Skills -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-container">
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h4>Programming</h4>
+                    <h3>Programming Languages</h3>
                     <ul>
-                        <li>Python (Proficient), C++, Shell, MATLAB</li>
+                        <li><strong>Python</strong> (Proficient, OOP)</li>
+                        <li><strong>C++</strong> (Familiar)</li>
+                        <li>Shell Scripting (Familiar)</li>
+                        <li>MATLAB (Basic)</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h4>Frameworks</h4>
+                    <h3>AI Frameworks & Libraries</h3>
                     <ul>
-                        <li>PyTorch, TensorFlow, NumPy, Pandas, OpenCV</li>
+                        <li><strong>PyTorch</strong> (Proficient)</li>
+                        <li>Numpy, Pandas, Matplotlib, OpenCV (Familiar)</li>
+                        <li>TensorFlow (Basic)</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h4>AI & ML</h4>
+                    <h3>AI Models & Techniques</h3>
                     <ul>
-                        <li>Vision Transformers, CNN (YOLO, UNet), AIGC (Stable Diffusion)</li>
-                        <li>LLMs (GPT, DeepSeek), Recommender Systems (DeepFM, DIN)</li>
-                        <li>Weakly Supervised Learning, OOD Detection, 3D Segmentation</li>
+                        <li><strong>Computer Vision:</strong> Transformer, ViT, CNNs (YOLO, UNet, UNETR++)</li>
+                        <li><strong>Others:</strong> Multi-modal (CLIP), AIGC (Stable Diffusion), LLMs (GPT, DeepSeek)</li>
+                        <li><strong>Specialized Areas:</strong> Recommendation Systems (DeepFM), Weakly Supervised Learning, OOD Detection</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h4>Tools & DevOps</h4>
+                    <h3>Tools & Platforms</h3>
                     <ul>
-                        <li>Git, Linux, Docker, MySQL, RESTful APIs</li>
+                        <li><strong>Version Control:</strong> Git (Proficient)</li>
+                        <li><strong>OS:</strong> Linux (Familiar)</li>
+                        <li>Docker (Basic)</li>
+                        <li>MySQL (Familiar)</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">Email: <a href="mailto:yongcunzhang@qq.com">yongcunzhang@qq.com</a></div>
+                <div class="contact-item">Phone: +86 18106081657</div>
+                <div class="contact-item">Homepage: <a href="https://yc-zh.github.io/homepage/" target="_blank">https://yc-zh.github.io/homepage/</a></div>
+                <div class="contact-item">GitHub: <a href="https://github.com/yc-zh" target="_blank">https://github.com/yc-zh</a></div>
             </div>
         </section>
     </div>
